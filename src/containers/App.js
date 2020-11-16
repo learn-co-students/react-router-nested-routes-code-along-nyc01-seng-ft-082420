@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route
 } from 'react-router-dom';
 import NavBar from '../components/NavBar';
@@ -18,13 +18,13 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <BrowserRouter>
         <div>
           <NavBar />
           <Route exact path="/" render={() => <div>Home</div>} />
           <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} />
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }
